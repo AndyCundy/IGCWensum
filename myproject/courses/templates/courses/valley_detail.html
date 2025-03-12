@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Valley Course</h2>
+    
+    <div style="display: flex; justify-content: space-between; gap: 20px;">
+        <div style="flex: 1;">
+            
+            <table style="width: 100%; font-size: 14px; border: 1px solid #ccc; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: black;">
+                        <th style="padding: 5px; text-align: left;">Hole</th>
+                        <th style="padding: 5px; text-align: left;">Yards</th>
+                        <th style="padding: 5px; text-align: left;">Par</th>
+                        <th style="padding: 5px; text-align: left;">Index</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hole in valley_details %}
+                        {% if hole.number <= 9 %}
+                        <tr>
+                            <td style="padding: 5px;">{{ hole.number }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_yards }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_par }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_index }}</td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1;">
+            
+            <table style="width: 100%; font-size: 14px; border: 1px solid #ccc; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: black;">
+                        <th style="padding: 5px; text-align: left;">Hole</th>
+                        <th style="padding: 5px; text-align: left;">Yards</th>
+                        <th style="padding: 5px; text-align: left;">Par</th>
+                        <th style="padding: 5px; text-align: left;">Index</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hole in valley_details %}
+                        {% if hole.number >= 10 %}
+                        <tr>
+                            <td style="padding: 5px;">{{ hole.number }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_yards }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_par }}</td>
+                            <td style="padding: 5px;">{{ hole.mens_index }}</td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

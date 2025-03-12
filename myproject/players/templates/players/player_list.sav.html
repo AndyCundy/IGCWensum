@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+   Players
+{% endblock  %}
+
+{% block content %}
+    <section>
+        <h1> List of Players </h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Index</th>
+                    <th>Wensum</th>
+                    <th>Valley</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for players in players %}
+
+        <tr>
+            <td>{{ players.name }}</td>
+            <td>{{ players.handicap_index }}</td>
+            <td>{{ players.wensum_handicap }}</td>
+            <td>{{ players.valley_handicap }}</td>
+        </tr>
+        
+
+    {% endfor%}
+</tbody>
+</table>
+    </section>
+{% endblock %}
+    
+

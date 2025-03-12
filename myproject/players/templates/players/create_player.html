@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+   New Player
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>New Player</h1>
+        <form class="form-with-validation" action="{% url 'players:create_player' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form }}
+            <button class="form-submit">Add Player</button>
+        </form>
+    </section>
+{% endblock %}

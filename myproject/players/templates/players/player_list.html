@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} Players {% endblock %}
+
+{% block content %}
+<section>
+    <h1>List of Players</h1>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr style="background-color: black; border-bottom: 2px solid #ddd;">
+                <th>Name</th>
+                <th>Index</th>
+                <th>Wensum</th>
+                <th>Valley</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td>{{ player.name }}</td>
+                <td>{{ player.handicap_index }}</td>
+                <td>{{ player.wensum_handicap }}</td>
+                <td>{{ player.valley_handicap }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
